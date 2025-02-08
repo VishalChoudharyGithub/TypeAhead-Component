@@ -1,5 +1,7 @@
 import "./typeAhead.css";
 import mockData from "../../data/mockapi.js";
+import { debounce } from "./util.js";
+
 function TypeAhead(container) {
   const input = document.createElement("input");
   input.type = "text";
@@ -9,7 +11,7 @@ function TypeAhead(container) {
   const dropdown = document.createElement("ul");
   dropdown.classList.add("typeahead-dropdown");
 
-  input.addEventListener("input", (event) => {
+  const handleInput = debounce((event) => {
     const searchTerm = event.target.value;
     if (!searchTerm) dropdown.innerHTML = "";
     else {
@@ -30,6 +32,7 @@ function TypeAhead(container) {
       });
     }
   });
+  input.addEventListener("input", handleInput);
   container.appendChild(input);
   container.appendChild(dropdown);
 }
