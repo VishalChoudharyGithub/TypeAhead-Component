@@ -1,0 +1,17 @@
+{
+  "name": "type-ahead",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "author": "Vishal Choudhary",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "vite": "^6.1.0"
+  }
+}
